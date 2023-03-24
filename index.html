@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+
+</head>
+  <body>
+    <main class="advice-screen">
+      <section class="adviceNumber">
+        <h1 class="title-advice">Advice #<span id="adviceId"></span></h1>
+      </section>
+      <section class="adviceText">
+        <div class="quote-text">
+          <q class="quotes"><span class="text" id="text"></span></q>
+        </div>
+      </section>
+      <section id="image">
+        <picture class="image">
+          <source srcset="./images/pattern-divider-mobile.svg" max-width="500px"></source>
+          <img src="./images/pattern-divider-desktop.svg" alt="page divider">
+        </picture>
+      </section>
+      <div class="random-advice-dice" id="dice" >
+        <img src="./images/icon-dice.svg">
+      </div>
+    </main>
+    <footer class="attribution">
+      Challenge by <a class="links" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a class="links" href="https://www.frontendmentor.io/profile/Okkie14" target="_blank">Okkert Joubert</a>.
+    </footer>
+  </body>
+<script src="./script.js"></script>
+</html>
