@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Advice generator app</title>
+  <title>Advice generator app</title>
 
   <!-- CSS Link -->
   <link rel="stylesheet" href="style.css">
@@ -25,17 +25,19 @@
       <section class="adviceText">
         <div class="quote-text">
           <q class="quotes"><span class="text" id="text"></span></q>
+          
         </div>
       </section>
+      <div class="loader"></div>
       <section id="image">
         <picture class="image">
           <source srcset="./images/pattern-divider-mobile.svg" max-width="500px"></source>
           <img src="./images/pattern-divider-desktop.svg" alt="page divider">
         </picture>
       </section>
-      <div class="random-advice-dice" id="dice" >
+      <button class="random-advice-dice" id="dice" >
         <img src="./images/icon-dice.svg">
-      </div>
+      </button>
     </main>
     <footer class="attribution">
       Challenge by <a class="links" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

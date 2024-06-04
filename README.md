@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://advice-app-jade.vercel.app/]
 
 ## My process
 
@@ -41,23 +41,56 @@ Users should be able to:
 - Mobile-first workflow
 - [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
 Using an API to get JSON message and incorporating async and await into the app
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.isLoading {
+  margin: 1em auto;
+  border: 8px solid var(--primary-cyan);
+  /* Light grey */
+  border-top: 8px solid var(--primary-green);
+  /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 ```
+
 ```js
 async function advice() {
+  loading = true;
+  quotes.classList.add("hidden");
+
+  if (loading) {
+    loadingState.classList.add("isLoading");
     const message = await fetch("https://api.adviceslip.com/advice");
-    const response = await message.json();
+
+    if (message.status === 200) {
+      loadingState.classList.remove("isLoading");
+      loading = false;
+      const response = await message.json();
+      const adviceNumber = response.slip.id;
+      const adviceText = response.slip.advice;
+
+      adviceId.innerHTML = adviceNumber;
+      adviceMessage.innerHTML = adviceText;
+      quotes.classList.remove("hidden");
+    } else {
+      quotes.classList.add("hidden");
+    }
+  }
 }
 ```

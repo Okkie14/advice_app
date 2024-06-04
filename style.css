@@ -31,6 +31,8 @@ body {
     background: var(--neutral-dark-blue);
     font-family: var(--ff);
     font-size: var(--fs);
+    height: 100dvh;
+    align-content: center;
 }
 /* 6. Improve media defaults */
 img, picture, video, canvas, svg {
@@ -50,7 +52,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .advice-screen{
     background: var(--neutral-dark-gray-blue);
     width: 90%;
-    margin: 2.5em auto;
+    margin-inline: auto;
     border-radius: 0.5em;
     position: relative;
 }
@@ -76,7 +78,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .quote-text {
     margin: 0 auto;
     width: 80%;
-
 }
 
 .image {
@@ -96,6 +97,37 @@ p, h1, h2, h3, h4, h5, h6 {
     bottom: -31px;
     transform: translate(-50%);
     padding: 1.25em;
+    border: none;
+}
+
+.random-advice-dice:disabled {
+    background: var(--primary-cyan)
+}
+
+.isLoading {
+    margin: 1em auto;
+    border: 8px solid var(--primary-cyan);
+    /* Light grey */
+    border-top: 8px solid var(--primary-green);
+    /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
 }
 
 /* Footer */
@@ -103,6 +135,7 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 11px;
     text-align: center;
     color: var(--neutral-gray-blue);
+    margin-top: 3em;
 }
 .links{
     color: var(--primary-cyan);
@@ -126,11 +159,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 @media screen and (min-width: 1025px) {
     .advice-screen{
-        margin-top: 10em;
         width: 25%;
     }
 
-    .random-advice-dice:hover {
+    .random-advice-dice:not(:disabled):hover {
         cursor: pointer;
         box-shadow: 0 0 15px var(--primary-green);
         transition: box-shadow 350ms ease-out;
