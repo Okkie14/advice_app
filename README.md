@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db/hub]
 - Live Site URL: [https://advice-app-jade.vercel.app/]
 
 ## My process
